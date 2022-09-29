@@ -3,8 +3,7 @@ package org.intellipaat.flask_sample_test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import junit.framework.Assert;
 /**
@@ -15,14 +14,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.setProperty("webdriver.chrome.driver","chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless --disable-dev-shm-usage --no-sandbox");
-        WebDriver driver = new ChromeDriver(options);
-        driver.get("http://3.80.97.59:82/");
-        WebElement element = driver.findElement(By.tagName("h1"));
-        String val = element.getText();
-        Assert.assertEquals("Test case failed", "Hello world! This message is from Kubernetes!", val);
-        driver.close();
+        WebDriver driver = new HtmlUnitDriver();			
+		driver.get("http://3.80.97.59:82/");
+	    WebElement element = driver.findElement(By.tagName("h1"));
+	    String val = element.getText();
+	    Assert.assertEquals("Test case failed", "Hello world! This message is from Kubernetes!", val);
+	    driver.close();
     }
 }
