@@ -18,7 +18,7 @@ public class App
 		driver.get("http://3.80.97.59:82/");
 	    WebElement element = driver.findElement(By.tagName("h1"));
 	    String val = element.getText();
-	    Assert.assertEquals("Test case failed", "Hello world! This message is from Kubernetes!", val);
+	    Assert.assertEquals("Test case failed", "Hello Earth! This message is from Kubernetes!", val);
 	    driver.close();
     }
 }
