@@ -18,7 +18,6 @@ public class App
         System.setProperty("webdriver.chrome.driver","chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        options.setBinary("/usr/bin/google-chrome-stable");
         WebDriver driver = new ChromeDriver(options);
         driver.get("http://3.80.97.59:82/");
         WebElement element = driver.findElement(By.tagName("h1"));
